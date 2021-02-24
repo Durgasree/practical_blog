@@ -1,0 +1,31 @@
+<h1> <%=link_to "Register User", new_user_path %> </h1>	
+
+<hr>
+<%if @users.empty?%>
+	<h1> No users present </h1>
+<%else%>
+	<table border="thin">
+		
+		<tr>
+			<th> Id</th>
+			<th> Name</th>
+			<th> Website Title </th>
+			<th> Website Url </th>
+			<th> Short Url </th>	
+			<th> Description </th> 
+			<th> Friends List </th>
+		</tr>
+
+		<%@users.each do |user|%>
+			<tr>
+				<td> <%=user.id%></td>
+				<td> <%=user.name%></td>
+				<td> <%=user.title%></td>
+				<td> <%=user.website_url%></td>
+				<td> <%= user.short_url%>
+				<td> <%=user.description%></td>
+				<td> <%=link_to 'Friends List', "user/#{user.id}/friends"%> </td>
+			</tr>
+		<%end%>
+	</table>
+<%end%>

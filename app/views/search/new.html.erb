@@ -1,0 +1,11 @@
+
+<div align="center" style="margin: 15%"> 
+<h2 > Search here </h2>
+<hr>
+<%=form_tag ('/search') do %>
+	<%=text_field_tag :query %>
+	<span> <%=submit_tag "Search", style: 'background-color: green'%></span> </div>
+<%end%>
+
+
+<h4 align="center"> <%= link_to 'New User?', new_user_path %> </h4>

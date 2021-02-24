@@ -1,0 +1,31 @@
+
+<%=link_to " back to search", "/"%>
+<h3 style="text-align: center"> New User Registration </h3>
+<hr>
+<div>
+	<p> <%=@errors%> </p>
+</div>
+
+<table style="margin-left: 50px">
+<%=form_for @user do |f|%>
+	<tr>
+		<td> <%=f.label "Name"%> </td>
+		<td> <%=f.text_field :name%> </td>
+	</tr>
+	<br>
+	<tr>
+		<td> <%=f.label "Website Title"%> </td>
+		<td> <%=f.text_field :title%> </td>
+	</tr>
+	<br>
+	<tr>
+		<td> <%=f.label "Website Url"%> </td>
+		<td> <%=f.text_field :website_url%> </td>
+	</tr>
+	<tr>
+		<td> <%=f.label "Description"%> </td>
+		<td> <%=f.text_field :description%> </td>
+	</tr>
+	<tr> <td colspan="4"> <%=f.submit "Register"%> </td></tr>
+<%end%>
+</table>	

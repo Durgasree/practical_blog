@@ -1,0 +1,25 @@
+
+<%=link_to " back to search", "/"%>
+<%if @friends.empty?%>
+	<h1> No friends added </h1>
+<%else%>
+<hr>
+	<table border="2">
+		<tr>
+			<th> Id</th>
+			<th> Name</th>
+			<th> Website Title </th>
+			<th> Website Url </th>
+			<th> Description </th> 
+		</tr>
+		<%@friends.each do |user|%>
+			<tr>
+				<td> <%=user.id%></td>
+				<td> <%=user.name%></td>
+				<td> <%=user.title%></td>
+				<td> <%=user.website_url%></td>
+				<td> <%=user.description%></td>
+			</tr>
+		<%end%>
+	</table>
+<%end%>
